@@ -47,6 +47,7 @@ class getmsg extends Thread
             {
                 MesengerClient2 ob = new MesengerClient2();
                  InputStream is = ob.s.getInputStream();
+                 clientSound sobj = new clientSound();
                  BufferedReader rr = new BufferedReader(new InputStreamReader(is));     
                 String rmsg;    
                 while(true)
@@ -54,6 +55,7 @@ class getmsg extends Thread
                     if((rmsg = rr.readLine()) != null)
                     {
                         System.out.println(rmsg);
+                        sobj.run();
                     }  
                 }
             }
