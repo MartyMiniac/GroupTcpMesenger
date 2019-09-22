@@ -16,9 +16,9 @@ public class MesengerClient2
       String temp="";
         while(true)
         {
-            if((temp = rtemp.readLine()) != null)
+            if((temp = rtemp.readLine()) != null) //receive from server
             {
-                break;
+                break; // displaying at DOS prompt
             }  
         }
       s = new Socket(inpip, Integer.parseInt(temp)); 
@@ -47,15 +47,13 @@ class getmsg extends Thread
             {
                 MesengerClient2 ob = new MesengerClient2();
                  InputStream is = ob.s.getInputStream();
-                 clientSound sobj = new clientSound();
                  BufferedReader rr = new BufferedReader(new InputStreamReader(is));     
                 String rmsg;    
                 while(true)
                 {
-                    if((rmsg = rr.readLine()) != null)
+                    if((rmsg = rr.readLine()) != null) //receive from server
                     {
-                        System.out.println(rmsg);
-                        sobj.run();
+                        System.out.println(rmsg); // displaying at DOS prompt
                     }  
                 }
             }
